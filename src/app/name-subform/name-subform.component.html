@@ -1,0 +1,14 @@
+<mat-form-field class="w-100">
+  <mat-label>First name</mat-label>
+  <input matInput [formControl]="form.controls.firstName" required />
+  <mat-error *ngIf="form.controls.firstName.hasError('required')">
+    Required
+  </mat-error>
+</mat-form-field>
+<mat-form-field class="w-100">
+  <mat-label>Last name</mat-label>
+  <input matInput [formControl]="form.controls.lastName" required />
+  <mat-error *ngIf="form.controls.lastName.hasError('required')">
+    Required
+  </mat-error>
+</mat-form-field>

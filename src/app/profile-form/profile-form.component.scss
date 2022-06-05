@@ -1,0 +1,57 @@
+p {
+  margin: 0 0 1.5rem 0;
+  color: #475569;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+[data-ref] {
+  color: var(--color);
+  font-size: 0.9em;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+[data-ref="name-subform"] {
+  --color: #22c55e;
+}
+
+[data-ref="contact-subform"] {
+  --color: #f97316;
+}
+
+app-name-subform,
+app-contact-subform {
+  display: block;
+  border-left: 3px solid var(--border-color);
+  margin-left: -1rem;
+  padding-left: 1rem;
+}
+
+app-name-subform {
+  --border-color: #86efac;
+}
+
+app-contact-subform {
+  --border-color: #fdba74;
+}
+
+.output {
+  margin-top: 1rem;
+}
+
+pre {
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow: auto;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}

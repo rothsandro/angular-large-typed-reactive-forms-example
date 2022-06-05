@@ -1,0 +1,42 @@
+<p>
+  The following form is split into two child components,
+  <span data-ref="name-subform">NameSubformComponent</span>
+  and <span data-ref="contact-subform">ContactSubformComponent</span>.
+</p>
+
+<!-- Wait until the user data has been fetched from the backend -->
+<!-- If you don't need initial form data you can remove this ngIf -->
+<form *ngIf="initialUser && user" (ngSubmit)="onSubmit()">
+  <!-- child form 1 -->
+  <app-name-subform
+    [initialUser]="initialUser"
+    (formReady)="addChildForm('name', $event)"
+    (valueChange)="patchUser($event)"
+  ></app-name-subform>
+
+  <!-- child form 2 -->
+  <app-contact-subform
+    [initialUser]="initialUser"
+    (formReady)="addChildForm('contact', $event)"
+    (valueChange)="patchUser($event)"
+  ></app-contact-subform>
+
+  <div class="output">
+    <div>Current User Object:</div>
+    <pre>{{ user | json }}</pre>
+  </div>
+
+  <div class="form-actions">
+    <button mat-button color="primary" type="button" (click)="form.reset()">
+      Reset
+    </button>
+    <button
+      mat-flat-button
+      color="primary"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Save
+    </button>
+  </div>
+</form>

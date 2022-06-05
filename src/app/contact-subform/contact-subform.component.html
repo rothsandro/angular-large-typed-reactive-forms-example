@@ -1,0 +1,14 @@
+<mat-form-field class="w-100">
+  <mat-label>E-mail</mat-label>
+  <input matInput type="email" [formControl]="form.controls.email" required />
+  <mat-error *ngIf="form.controls.email.hasError('required')">
+    Required
+  </mat-error>
+  <mat-error *ngIf="form.controls.email.hasError('email')">
+    E-mail address not valid
+  </mat-error>
+</mat-form-field>
+<mat-form-field class="w-100">
+  <mat-label>GitHub Profile</mat-label>
+  <input matInput [formControl]="form.controls.github" />
+</mat-form-field>
